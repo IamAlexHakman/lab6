@@ -1,0 +1,22 @@
+﻿#include <stdio.h>
+#include <time.h>
+#include <stdlib.h>
+#include <math.h>
+
+float f(float x, float y);
+int main(void){
+float u,a,b;
+printf("a=");
+scanf("%g",&a);
+printf("b=");
+scanf("%g",&b);
+u=f(1.7,a)+f(b,a)+f(a+b,b-a);
+printf("u=%g",u);
+  return 0;
+}
+float f(float x, float y)
+{
+  float t;
+  t=(pow(x,2)+x*y-pow(y,2))/(1+pow(x,2)+pow(y,2));
+  return t;
+}

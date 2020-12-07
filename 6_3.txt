@@ -1,0 +1,32 @@
+﻿#include <stdio.h>
+float ser(int a[],int n);
+
+int main(void) {
+int colCount; 
+printf("введіть кількість елементів:");
+scanf("%d", &colCount); 
+int a[colCount];
+float sum=0;
+for (int i = 0; i < colCount; i++) 
+{
+printf("a[%d]=", i);
+scanf("%d", &a[i]); 
+}
+sum=ser(a,colCount);
+printf("середнє арифметичне елементів з парними індексами:%g",sum);
+  return 0;
+}
+
+float ser(int a[],int n)
+{
+float sum=0;
+int kil=0;
+for (int i=0; i<n; i++)
+if(i%2==0)
+{
+sum+=a[i];
+kil++;
+}
+sum=sum/kil;  
+  return sum;
+}
